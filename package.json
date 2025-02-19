@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@by-association-only/vite-plugin-shopify-clean": "^2.2.0",
+    "@tailwindcss/postcss": "^4.0.7",
     "rollup-plugin-globlin": "^0.1.4"
   }
 }
