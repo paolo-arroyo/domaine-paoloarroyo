@@ -1,0 +1,55 @@
+<div class="flex flex-col px-8 py-8 gap-8 bg-white w-[500px]">
+  <!-- Product Image Container -->
+  <div class="group relative overflow-hidden rounded-lg border-gray-200 border-1 p-4">
+    <img
+      src="{{ product.featured_image | image_url: width: 500 }}"
+      alt="{{ product.title }}"
+      class="primary-image w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+      width="500"
+      height="auto"
+    >
+    <img
+      src="{{ product.variants[0].image | image_url: width: 500 }}"
+      alt="{{ product.variants[0].title }}"
+      class="secondary-image absolute top-0 left-0 w-full h-auto transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+      width="500"
+      height="auto"
+    >
+    {% if product.compare_at_price > product.price %}
+      <span class="absolute top-8 left-8 bg-transparent rounded-full border-red-500 border-solid border-2 text-red-500 text-3xl font-bold px-4 py-1">
+        On Sale
+      </span>
+    {% endif %}
+  </div>
+
+  <div class="flex flex-row gap-4">
+    {% for option in product.options_with_values %}
+      {% if option.name == 'Color' %}
+        {% for color in product.metafields.shopify['color-pattern'].value %}
+          <button
+            class="min-w-10 min-h-10 w-10 h-10 rounded-full cursor-pointer color-swatch"
+            style="background-color: {{ color.color }}"
+            data-color-label="{{ color.label }}"
+            data-primary-image="{{ product.images[forloop.index0] | image_url: width: 500 }}"
+            data-hover-image="{{ product.variants[forloop.index0].image | image_url: width: 500 }}"
+          ></button>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <span class="text-2xl text-gray-500">{{ product.vendor }}</span>
+    <span class="text-4xl text-gray-900 font-medium">{{ product.title }}</span>
+    <div class="text-3xl text-gray-900 flex flex-row gap-4 items-center">
+      {% if product.compare_at_price > product.price %}
+        <span class="line-through text-gray-500">
+          {{ product.compare_at_price | money }}
+        </span>
+      {% endif %}
+      <span class="{% if product.compare_at_price > product.price %} text-red-500 {% endif %}">
+        {{- product.price | money -}}
+      </span>
+    </div>
+  </div>
+</div>
