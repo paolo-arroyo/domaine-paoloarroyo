@@ -1,0 +1,60 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding: {{ section.settings.section_padding }}px 0;
+  }
+{% endstyle %}
+
+<div class="flex flex-row gap-8" style="padding: {{ section.settings.section_padding }}px;">
+  {% for block in section.blocks %}
+    {% render 'product-card-custom', product: block.settings.product %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product List (Custom)",
+  "class": "product-list-custom",
+  "settings": [
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Padding",
+      "min": 10,
+      "max": 120,
+      "step": 10,
+      "default": 20,
+      "info": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product List (Custom)",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}
