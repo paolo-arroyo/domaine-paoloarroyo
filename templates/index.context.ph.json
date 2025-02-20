@@ -12,5 +12,59 @@
   "context": {
     "market": "ph"
   },
-  "sections": {}
+  "sections": {
+    "rich_text_K73xq": {
+      "type": "rich-text",
+      "disabled": false,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "header-e9f8f97926c4c5522d2cb32e2f0152f0": null,
+        "padding_top": 40,
+        "padding_bottom": 52
+      },
+      "blocks": {
+        "heading_YNj8z": {
+          "type": "heading",
+          "disabled": false,
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_8gqnk": {
+          "type": "text",
+          "disabled": false,
+          "settings": {
+            "text": "<p>This is Philippines' Specific Content</p>"
+          }
+        },
+        "button_XHihc": {
+          "type": "button",
+          "disabled": false,
+          "settings": {
+            "header-8267bde984afcfcd06c035b56e643b86": null,
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "header-d4f3f27eaf9bbb88718b1e7a06c1533c": null,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YNj8z",
+        "text_8gqnk",
+        "button_XHihc"
+      ]
+    }
+  },
+  "order": [
+    "product_list_custom_pWgRWy",
+    "rich_text_K73xq"
+  ]
 }
