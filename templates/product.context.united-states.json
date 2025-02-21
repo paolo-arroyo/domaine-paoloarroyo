@@ -10,19 +10,7 @@
 {
   "parent": "product.json",
   "context": {
-    "market": "ph"
+    "market": "united-states"
   },
-  "sections": {
-    "rich_text_amA4k4": {
-      "settings": {},
-      "blocks": {
-        "heading_6AJj7b": {
-          "settings": {
-            "heading": "Market Test: Philippines",
-            "heading_size": "h2"
-          }
-        }
-      }
-    }
-  }
+  "sections": {}
 }
