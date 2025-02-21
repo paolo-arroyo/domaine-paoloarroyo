@@ -12,5 +12,17 @@
   "context": {
     "market": "united-states"
   },
-  "sections": {}
+  "sections": {
+    "rich_text_amA4k4": {
+      "settings": {},
+      "blocks": {
+        "heading_6AJj7b": {
+          "settings": {
+            "heading_size": "h2",
+            "heading": "Market Test: United States"
+          }
+        }
+      }
+    }
+  }
 }
